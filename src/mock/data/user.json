@@ -1,0 +1,11 @@
+{
+  "userInfo": {
+    "success": true,
+    "code": "200",
+    "message": null,
+    "data": {
+      "userId": 1,
+      "userName": "hrd123"
+    }
+  }
+}

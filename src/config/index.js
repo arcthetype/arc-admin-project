@@ -8,6 +8,6 @@ export default {
    */
   ajaxDefaultConfig: {
     timeout: 10000,
-    baseURL: ''
+    baseURL: process.env.VUE_APP_API
   }
 }
