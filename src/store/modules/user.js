@@ -25,7 +25,7 @@ export default {
     actionLogin({ commit }, args) {
       return userDao
         .login({
-          name: args.name,
+          userName: args.name,
           password: args.password
         })
         .then(
@@ -47,12 +47,15 @@ export default {
       return userDao.isLogin().then(
         res => {
           if (res.success) {
-            args.succCall && args.succCall()
+            if (res.data) {
+              args.succCall && args.succCall()
+            } else {
+              commit(SET_TOKEN, null)
+              commit(SET_USER_INFO, null)
+              args.failCall && args.failCall()
+            }
           } else {
             Message.error(res.message)
-            commit(SET_TOKEN, null)
-            commit(SET_USER_INFO, null)
-            args.failCall && args.failCall()
           }
         },
         err => {

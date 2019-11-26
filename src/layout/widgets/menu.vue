@@ -163,6 +163,12 @@ export default {
   methods: {
     setMenuHeight() {
       this.$refs.arcMenu.style.height = window.innerHeight - 36 + 'px'
+    },
+    handleOpen() {
+
+    },
+    handleClose() {
+      
     }
   }
 }

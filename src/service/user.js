@@ -4,7 +4,7 @@ export default {
   namespaced: true,
   login(data) {
     return http({
-      url: '/user/login',
+      url: '/login/signIn',
       method: 'post',
       data
     })
@@ -17,7 +17,7 @@ export default {
   },
   isLogin() {
     return http({
-      url: '/check/isLogin',
+      url: '/login/isLogin',
       method: 'get'
     })
   }

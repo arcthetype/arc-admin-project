@@ -73,6 +73,7 @@ export default {
       }
     }
   },
+
   methods: {
     ...mapActions('user', ['actionLogin']),
     submitForm(formName) {
@@ -89,7 +90,18 @@ export default {
           this.actionLogin(params)
         }
       })
+    },
+    keyupSubmit() {
+      document.onkeydown = e=> {
+        let _key = window.event.keyCode;
+        if(_key === 13){
+          this.submitForm('loginForm')
+        }
+      }
     }
+  },
+  created() {
+    this.keyupSubmit();
   }
 }
 </script>
