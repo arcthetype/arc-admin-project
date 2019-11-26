@@ -9,12 +9,6 @@ export default {
       data
     })
   },
-  logout() {
-    return http({
-      url: '/user/logout',
-      method: 'post'
-    })
-  },
   isLogin() {
     return http({
       url: '/login/isLogin',

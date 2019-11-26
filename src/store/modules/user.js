@@ -7,11 +7,13 @@ export default {
   namespaced: true,
   state: {
     token: null,
-    userInfo: null
+    userInfo: null,
+    username: ''
   },
   getters: {
     getUserInfo: state => state.userInfo,
-    getToken: state => state.token
+    getToken: state => state.token,
+    getUsername: state => state.username
   },
   mutations: {
     [SET_TOKEN](state, token) {
@@ -19,6 +21,7 @@ export default {
     },
     [SET_USER_INFO](state, userInfo) {
       state.userInfo = userInfo
+      state.username = userInfo ? JSON.parse(userInfo).sub : ''
     }
   },
   actions: {

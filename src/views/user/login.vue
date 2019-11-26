@@ -92,16 +92,16 @@ export default {
       })
     },
     keyupSubmit() {
-      document.onkeydown = e=> {
-        let _key = window.event.keyCode;
-        if(_key === 13){
+      document.onkeydown = () => {
+        let _key = window.event.keyCode
+        if (_key === 13) {
           this.submitForm('loginForm')
         }
       }
     }
   },
   created() {
-    this.keyupSubmit();
+    this.keyupSubmit()
   }
 }
 </script>
