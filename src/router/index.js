@@ -3,7 +3,12 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-let routes = []
+let routes = [
+  {
+    path: '/',
+    redirect: '/main/index'
+  }
+]
 const requireModule = require.context('./modules', false, /\.js$/)
 requireModule.keys().forEach(item => {
   let module = requireModule(item).default

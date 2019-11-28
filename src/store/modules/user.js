@@ -7,11 +7,13 @@ export default {
   namespaced: true,
   state: {
     token: null,
-    userInfo: null
+    userInfo: null,
+    username: ''
   },
   getters: {
     getUserInfo: state => state.userInfo,
-    getToken: state => state.token
+    getToken: state => state.token,
+    getUsername: state => state.username
   },
   mutations: {
     [SET_TOKEN](state, token) {
@@ -19,13 +21,14 @@ export default {
     },
     [SET_USER_INFO](state, userInfo) {
       state.userInfo = userInfo
+      state.username = userInfo ? JSON.parse(userInfo).sub : ''
     }
   },
   actions: {
     actionLogin({ commit }, args) {
       return userDao
         .login({
-          name: args.name,
+          userName: args.name,
           password: args.password
         })
         .then(
@@ -47,12 +50,15 @@ export default {
       return userDao.isLogin().then(
         res => {
           if (res.success) {
-            args.succCall && args.succCall()
+            if (res.data) {
+              args.succCall && args.succCall()
+            } else {
+              commit(SET_TOKEN, null)
+              commit(SET_USER_INFO, null)
+              args.failCall && args.failCall()
+            }
           } else {
             Message.error(res.message)
-            commit(SET_TOKEN, null)
-            commit(SET_USER_INFO, null)
-            args.failCall && args.failCall()
           }
         },
         err => {

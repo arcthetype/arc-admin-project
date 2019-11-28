@@ -4,20 +4,14 @@ export default {
   namespaced: true,
   login(data) {
     return http({
-      url: '/user/login',
+      url: '/login/signIn',
       method: 'post',
       data
     })
   },
-  logout() {
-    return http({
-      url: '/user/logout',
-      method: 'post'
-    })
-  },
   isLogin() {
     return http({
-      url: '/check/isLogin',
+      url: '/login/isLogin',
       method: 'get'
     })
   }

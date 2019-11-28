@@ -8,22 +8,38 @@
     ></el-avatar>
     <el-dropdown class="header-item" trigger="click">
       <span class="el-dropdown-link">
-        HRDVV
+        {{ getUsername }}
         <i class="el-icon-arrow-down el-icon--right"></i>
       </span>
       <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item>退出</el-dropdown-item>
+        <el-dropdown-item>
+          <el-button type="text" @click="logout">退出</el-button>
+        </el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
   </div>
 </template>
 
 <script>
+import { SET_TOKEN, SET_USER_INFO } from '@/store/types'
+import { mapMutations } from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
       avatarUrl:
         'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png'
+    }
+  },
+  computed: {
+    ...mapGetters('user', ['getUsername'])
+  },
+  methods: {
+    ...mapMutations('user', [SET_TOKEN, SET_USER_INFO]),
+    logout() {
+      this.SET_TOKEN(null)
+      this.SET_USER_INFO(null)
+      this.$router.push({ name: 'Login' })
     }
   }
 }
