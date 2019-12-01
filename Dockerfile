@@ -12,7 +12,7 @@ RUN set -eux \
 FROM nginx
 WORKDIR /sources/arc-admin/
 COPY --from=builder /app/dist/ .
-COPY --from=builder /app/nginx.conf /etc/nginx/conf.d/nginx.conf
+COPY --from=builder /app/nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
