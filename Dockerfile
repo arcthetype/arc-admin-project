@@ -14,6 +14,3 @@ WORKDIR /sources/arc-admin/
 COPY --from=builder /app/dist/ .
 COPY --from=builder /app/nginx.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 80
-
-CMD ["nginx"]
