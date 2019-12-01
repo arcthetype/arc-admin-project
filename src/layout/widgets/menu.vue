@@ -9,7 +9,7 @@
     >
       <li class="el-submenu">
         <div class="el-submenu__title" style="color: rgb(211, 220, 230);">
-          <arc-svg-icon name="logo" class-name="logo" />
+          <img src="../../assets/images/logo.png" alt="" class="logo" />
           <span class="menu-title--text">Archetype</span>
         </div>
       </li>
@@ -74,7 +74,7 @@ export default {
 
 <style lang="scss">
 .arc-ly-menu {
-  .logo.svg-icon {
+  .logo {
     width: 30px;
     height: 30px;
     margin: 0 5px 0 0;

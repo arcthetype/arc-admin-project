@@ -1,7 +1,7 @@
 <template>
   <div class="arc-pg-login">
     <p class="login-title">
-      <arc-svg-icon name="logo" class-name="logo" />
+      <img src="../../assets/images/logo.png" alt="" class="logo" />
       <span class="login-name">Archetype</span>
     </p>
     <el-form
@@ -112,7 +112,7 @@ export default {
   .login-title {
     text-align: center;
     margin: 80px 0 30px;
-    .logo.svg-icon {
+    .logo {
       width: 50px;
       height: 50px;
       display: inline-block;
