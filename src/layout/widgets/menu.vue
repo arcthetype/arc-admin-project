@@ -49,6 +49,60 @@
           <span slot="title">导航三</span>
         </el-menu-item>
       </el-submenu>
+      <el-submenu index="6">
+        <template slot="title">
+          <i class="el-icon-location"></i>
+          <span>导航一</span>
+        </template>
+        <el-menu-item index="2-1">
+          <i class="el-icon-menu"></i>
+          <span slot="title">导航二</span>
+        </el-menu-item>
+        <el-menu-item index="2-2">
+          <i class="el-icon-menu"></i>
+          <span slot="title">导航二</span>
+        </el-menu-item>
+        <el-menu-item index="2-3">
+          <i class="el-icon-menu"></i>
+          <span slot="title">导航三</span>
+        </el-menu-item>
+      </el-submenu>
+      <el-submenu index="3">
+        <template slot="title">
+          <i class="el-icon-location"></i>
+          <span>导航一</span>
+        </template>
+        <el-menu-item index="2-1">
+          <i class="el-icon-menu"></i>
+          <span slot="title">导航二</span>
+        </el-menu-item>
+        <el-menu-item index="2-2">
+          <i class="el-icon-menu"></i>
+          <span slot="title">导航二</span>
+        </el-menu-item>
+        <el-menu-item index="2-3">
+          <i class="el-icon-menu"></i>
+          <span slot="title">导航三</span>
+        </el-menu-item>
+      </el-submenu>
+      <el-submenu index="4">
+        <template slot="title">
+          <i class="el-icon-location"></i>
+          <span>导航一</span>
+        </template>
+        <el-menu-item index="2-1">
+          <i class="el-icon-menu"></i>
+          <span slot="title">导航二</span>
+        </el-menu-item>
+        <el-menu-item index="2-2">
+          <i class="el-icon-menu"></i>
+          <span slot="title">导航二</span>
+        </el-menu-item>
+        <el-menu-item index="2-3">
+          <i class="el-icon-menu"></i>
+          <span slot="title">导航三</span>
+        </el-menu-item>
+      </el-submenu>
     </el-menu>
   </div>
 </template>

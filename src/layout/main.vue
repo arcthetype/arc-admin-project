@@ -10,9 +10,9 @@
             <ly-header />
           </el-header>
           <el-main>
-            <transition name="el-fade-in-linear">
-              <router-view :key="$route.fullPath" />
-            </transition>
+            <!-- <transition name="el-fade-in-linear"> -->
+            <router-view :key="$route.fullPath" />
+            <!-- </transition> -->
           </el-main>
         </el-container>
       </el-container>
@@ -46,6 +46,13 @@ export default {
   .el-aside,
   .el-main {
     padding: 0;
+  }
+  .el-aside {
+    background: $main-aside-bg;
+    max-width: $menu-min-width;
+  }
+  .ly-middle {
+    overflow: hidden;
   }
 }
 </style>
